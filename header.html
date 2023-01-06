@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+          text-decoration: none;
+        }
+
+        .brand {
+          float: left;
+          line-height:35px;
+          margin-top:5px;
+        }
+
+        .brand a,
+        .brand a:visited {
+          color: #ffffff;
+          text-decoration: none;
+        }
+        
+        .logoImg{
+            display:inline-block;
+            align-items:center;
+            margin-left:20px;
+            width:30px;
+            vertical-align:middle;
+        }
+        
+        .logoName{
+            display:inline-block;
+            font-size:20px;
+            font-weight:bold;
+            color:#3e3b4a;
+            vertical-align:middle;
+        }
+        
+        .nav-container {
+          max-width: 85%;
+          margin: 0 auto;
+        }
+        
+        nav {
+          float: right;
+        }
+        nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        nav ul li {
+          float: left;
+          position: relative;
+        }
+        nav ul li a,
+        nav ul li a:visited {
+          display: block;
+          font-size: 15px;
+          padding: 5px 10px;
+          margin: 0 10px;
+          line-height: 35px;
+          background: #ffffff00;
+          color: #333d4b;
+          text-decoration: none;
+        }
+        nav ul li a:hover,
+        nav ul li a:visited:hover{
+          background: #dcc8f1eb;
+          border-radius: 15px;
+          color: #ffffff;
+          text-decoration:none;
+        }
+
+        nav ul li ul li {
+          min-width: 190px;
+        }
+        nav ul li ul li a {
+          padding: 15px;
+          line-height: 20px;
+          background:#ffffff;
+        }
+        
+        .nav-dropdown {
+          position: absolute;
+          display: none;
+          z-index: 1;
+          box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+        }
+      
+
+    </style>
+</head>
+<body>
+    <section class="navigation">
+      <div class="nav-container">
+        <div class="brand">
+          <a class="logo" href="/">
+              <img class="logoImg" src="./6.png"/>						
+              <div class="logoName">PURRY</div>
+          </a>
+        </div>
+        <nav>
+          <ul class="nav-list">
+            <li>
+              <a href="/">회사 소개</a>
+            </li>
+            <li>
+              <a href="/">자주 묻는 질문</a>
+            </li>
+            <li>
+              <a href="/">사용 방법</a>
+            </li>
+            <li>
+              <a href="/">굿즈</a>
+            </li>
+            <li>
+              <a href="/" style="display:inline-block; margin-left:44px; margin-right:0;">KOR</a>
+              <div href="/" style="display:inline-block">|</div>
+              <a href="/" style="display:inline-block; margin-left:0;">ENG</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+        
+    </body>
+    <script>
+      // modal 창 함수
+      $(function(){
+        $(".login").click(function(){
+          $(".modal").fadeIn();
+        });
+        
+        $(".modal_content").click(function(){
+          $(".modal").fadeOut();
+        });
+      });
+      </script>
+</html>
