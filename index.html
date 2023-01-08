@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+
         body {
             margin: 0 auto;
+            font-family: 'Gowun Batang', serif;
         }
 
         /* nav-bar */
@@ -17,6 +23,9 @@
             text-decoration: none;
         }
 
+        #ser-button {
+            font-family: 'Gowun Batang', serif;
+        }
         .et-hero-tabs,
         .et-slide {
             display: flex;
@@ -82,6 +91,12 @@
             height: 6px;
             background: rgb(164 151 237);
             transition: left 0.3s ease;
+        }
+
+        .intro-service{
+            z-index: 10;
+            position:absolute;
+            top:5%;
         }
 
         /* @media (min-width: 800px) {
@@ -209,7 +224,7 @@
 
         /* 서비스 신청서 작성*/
         .form-container {
-            width: 50%;
+            width: 60%;
             background-color: #f6f6f6;
             padding: 10px;
             border-radius: 10px;
@@ -225,6 +240,7 @@
             font-size: 1.1rem;
             font-weight: 600;
             border-radius: 20px;
+            font-family:'Gowun Batang', serif;
             background: rgb(82 0 213 / 81%);
             border: none;
             color: white;
@@ -234,6 +250,15 @@
             background: rgb(164 151 237);
             cursor: pointer;
             transition: 0.7s;
+        }
+        .form-input{
+            font-weight:600;
+            font-size:1.5rem;
+            text-align:left;
+        }
+
+        #form-input-span{
+            font-size:1.1rem;
         }
 
         .form-input2 {
@@ -268,9 +293,11 @@
             position: relative;
             margin-bottom: 5px;
         }
-
+        .file-upload-wrapper > button{
+            font-family: 'Gowun Batang', serif;
+        }
         .file-upload-input {
-            width: 300px;
+            width: 40%;
             color: #000;
             padding: 11px 17px;
             border: none;
@@ -292,7 +319,7 @@
         }
 
         .file-upload-button {
-            width: 25%;
+            width: 30%;
             height: calc(1.5em + 0.75rem + 2px);
             cursor: pointer;
             display: inline-block;
@@ -321,8 +348,8 @@
 
         .wrap {
             text-align: center;
-            width: 600px;
-            height: 400px;
+            width: 70%;
+            height: 50vh;
             margin: 0 auto;
             margin-top: 100px;
             border: 10px double rgba(255, 255, 255, 0.2);
@@ -334,7 +361,7 @@
             text-align: center;
             text-transform: uppercase;
             margin-top: 50px;
-            font-size: 35px;
+            font-size: 3em;
         }
 
         .wrap h2 strong {
@@ -424,49 +451,219 @@
                 transform: scale(0.8);
             }
         }
-        
-        .q-container{
+
+        .q-container {
             text-align: left;
-            width:70%;
+            width: 70%;
         }
 
-        .question{
-            padding:15px 15px;
-            font-size:1.2em;
+        .question {
+            padding: 15px 15px;
+            font-size: 1.2em;
             background-color: #ddd;
-            border-radius:20px;
-            margin-bottom:10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
         }
 
-        .question:hover{
+        .question:hover {
             background-color: #dad1f9;
             transition: 1s;
         }
 
-        .answer{
-            padding:15px 15px;
-            font-size:1.2em;
+        .answer {
+            padding: 15px 15px;
+            font-size: 1.2em;
             background-color: #ddd;
-            border-radius:20px;
-            margin-bottom:10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
         }
+        
+        @media (min-width:768px) {
+            .et-hero-tabs-container2, .mobile-nav-button, .mobile-menu{
+                    display: none;
+                }
+        }
+
         /* 모바일 */
-        @media (min-width: 768px) {}
+        @media (max-width: 768px) {
+            .et-hero-tabs-container {
+                display: none;
+            }
+
+            .mobile-nav-button {
+                position: fixed;
+                margin: 2rem;
+                left: 0;
+                top: 0;
+                z-index: 9999;
+                cursor: pointer;
+                width: 35px;
+                height: 30px;
+            }
+
+            .mobile-nav-button .mobile-nav-button__line {
+                width: 100%;
+                height: 4px;
+                background: #0e0e0e;
+                position: relative;
+                transition: 1s ease;
+            }
+
+            .mobile-nav-button .mobile-nav-button__line:nth-of-type(2) {
+                margin: 0.5rem 0;
+            }
+
+            .mobile-nav-button .mobile-nav-button__line--1 {
+                transform: rotate(45deg);
+                top: 13px;
+                position: absolute;
+            }
+
+            .mobile-nav-button .mobile-nav-button__line--2 {
+                display: none;
+            }
+
+            .mobile-nav-button .mobile-nav-button__line--3 {
+                transform: rotate(135deg);
+                top: 13px;
+                position: absolute;
+            }
+
+            .mobile-menu {
+                display: block;
+                max-width: 500px;
+                width: 100%;
+                right: -100%;
+                height: 100vh;
+                background: #d2c6ff;
+                opacity:0;
+                position: fixed;
+                z-index: 9998;
+                transition: 0.6s ease;
+                top: 0;
+            }
+
+            .mobile-menu ul {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 0;
+            }
+
+            .mobile-menu ul li {
+                list-style: none;
+            }
+
+            .mobile-menu ul li a {
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                display: block;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                font-size: 2.5rem;
+                margin-bottom:30px;
+                font-weight: bold;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .mobile-menu ul li a:after {
+                content: "";
+                background: #0e0e0e;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                right: -100%;
+                top: 0;
+                z-index: -1;
+                transition: 0.4s ease;
+            }
+
+            .mobile-menu ul li a:hover {
+                color: #fff;
+            }
+
+            .mobile-menu ul li a:hover:after {
+                right: 0;
+            }
+
+            .mobile-menu--open {
+                right: 0;
+                opacity: 1;
+            }
+
+            #kakao{
+                font-size:1.7em;
+            }
+
+            .wrap {
+                width:100%;
+            }
+            
+            .q-container{
+                width:90%;
+            }
+            .q-container div{
+                font-size:1em;
+            }
+
+            .form-container{
+                width:100%;
+            }
+
+            .file-upload-input{
+                width:50%;
+            }
+
+            .file-upload-button{
+                font-size:1em;
+            }
+            
+            .et-slide h3{
+                font-size:1.5rem;
+            }
+
+            .et-slide h2{
+                font-size:1rem;
+                padding:0 20px;
+            }
+
+            #tab-flexbox > div{
+                top:0%;
+            }
+
+            .et-hero-tabs h1{
+                font-size:2rem;
+            }
+
+            .et-hero-tabs h3{
+                font-size:1.4rem;
+            }
+            .intro h3{
+                font-size:2rem;
+            }
+            #ser-button{
+                width:60%;
+                margin-top:30px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- Hero -->
+    <!-- PC 내비게이션-->
     <section class="et-hero-tabs">
         <div class="index-background"></div>
         <div class="index-gradient"></div>
         <div class="intro">
             <img class="logoImg" src="./6.png" />
-            <h1 class="logoName">PURRY</h1>
-            <h3 style="display:inline-block">with open Beta</h3>
+            <h1 class="logoName">PURRY with AI</h1><br><br>
+            <h3 style="display:inline-block">Open Beta release!</h3>
         </div>
-        <h3 style="margin-bottom:20px; margin-top:0px;">AI로 당신의 반려동물을 변신시켜보세요</h3>
-        <button type="button" id="ser-button">서비스 바로가기</button>
+        <h3 style="margin-bottom:20px; margin-top:0px;">AI를 통해 당신의 반려동물에게 귀여운 캐리커쳐를 그려주세요!</h3>
+        <button type="button" id="ser-button">오픈베타 참여하기</button>
 
         <div class="et-hero-tabs-container">
             <a class="et-hero-tab" id="service" href="#tab-es6">서비스 신청</a>
@@ -478,19 +675,44 @@
         </div>
     </section>
 
+    <!-- 모바일 네비게이션 -->
+    <section>
+        <div class="mobile-nav-button">
+            <div class="mobile-nav-button__line"></div>
+            <div class="mobile-nav-button__line"></div>
+            <div class="mobile-nav-button__line"></div>
+        </div>
+
+        <nav class="mobile-menu">
+            <ul class="et-hero-tabs-container2">
+                <li><a class="et-hero-tab" id="service" href="#tab-es6">서비스 신청</a></li>
+                <li><a class="et-hero-tab" href="#tab-flexbox">PURRY 소개</a></li>
+                <li><a class="et-hero-tab" href="#tab-react">자주 묻는 질문</a></li>
+                <li><a class="et-hero-tab" href="#tab-angular">굿즈 제작</a></li>
+                <li><a class="et-hero-tab" href="#tab-other">오픈채팅</a></li>
+                <span class="et-hero-tab-slider"></span>
+            </ul>
+            <!-- <ul>
+                <li><a>Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Blog</a></li>
+                <li><a>Contact</a></li>
+            </ul> -->
+        </nav>
+    </section>
     <!-- Main -->
     <main class="et-main">
         <section class="et-slide" id="tab-es6">
             <h1 style="font-size:1.8rem; margin-bottom:15px;">신청서 작성하기</h1>
             <div class="form-container">
-                <div class="form-input" style="font-weight: 600; font-size:16px; text-align:left;">신청자명</div>
+                <div class="form-input" >신청자명</div>
                 <input type="text" autocomplete="new-password" class="form-input form-input2" id="name"
                     placeholder="본인 이름"><br>
-                <div class="form-input" style="font-weight: 600; font-size:16px; text-align:left;">이메일 주소</div>
+                <div class="form-input" >이메일 주소</div>
                 <input type="text" autocomplete="new-password" class="form-input form-input2" id="photo"
                     placeholder="결과물을 받을 이메일"><br><br>
-                <div class="form-input" style="font-weight: 600; font-size:16px; text-align:left;">반려동물 사진<br>* 동물의 얼굴을
-                    기준으로 (정면, 위, 아래, 오른쪽, 왼쪽) 총 5장을 입력해주세요!</div>
+                <div class="form-input" >반려동물 사진<br><span id="form-input-span">* 동물의 얼굴을
+                    기준으로 (정면, 위, 아래, 오른쪽, 왼쪽) 총 5장을 입력해주세요!</span></div>
                 <div class="custom-file-upload">
                     <input type="file" id="file" name="myfiles[]" multiple />
                 </div><br><br><br>
@@ -498,23 +720,25 @@
             </div>
         </section>
         <section class="et-slide" id="tab-flexbox">
-            <div style="z-index:10; position:absolute; top:5%;">
-            <h3 style="margin-bottom:10px;">PURRY는 무슨 서비스일까요?</h3>
-            <h2 >AI를 활용해 반려동물의 이미지를 학습하여 다양한 컨셉으로 그림을 그려주는 서비스입니다</h2>
+            <div class="intro-service">
+                <h3 style="margin-bottom:10px;">PURRY는 무슨 서비스일까요?</h3>
+                <h2>AI를 활용해 반려동물의 귀여운 얼굴을 학습해 다양한 컨셉으로 그림을 그려주는 서비스입니다</h2>
             </div>
-            <img src="./3.png" style="width:100%; margin-top:20px; margin-bottom:20px; position:absolute; opacity:90%; top:9%;" />
+            <img src="./3.png"
+                style="width:100%; margin-top:20px; margin-bottom:20px; position:absolute; opacity:90%; top:9%;" />
         </section>
         <section class="et-slide" id="tab-react">
             <h1 style="font-size:2.5em; margin-bottom:30px;">자주 묻는 질문</h1>
             <div class="q-container">
                 <div class="question" id="q1">Q1. 어떻게 사용하는건가요?</div>
-                <div class="answer" id="a1" style="display:none;">A1. 본인의 반려동물의 얼굴을 정면, 위, 아래, 오른쪽, 왼쪽에서 촬영하여 최소 5장 이상 원본 사진을 전송해주시면 됩니다.<br>
-                오픈 베타 기간 중에는 PURRY에서 정한 특정한 화풍으로 그림이 제작되어 발송될 예정입니다.</div>
+                <div class="answer" id="a1" style="display:none;">A1. 본인의 반려동물의 얼굴을 정면, 위, 아래, 오른쪽, 왼쪽에서 촬영하여 최소 5장 이상
+                    원본 사진을 전송해주시면 됩니다.<br>
+                    오픈 베타 기간 중에는 PURRY에서 정한 특정한 화풍으로 그림이 제작되어 발송될 예정입니다.</div>
                 <div class="question" id="q2">Q2. 결과는 어떻게 받을 수 있나요?</div>
                 <div class="answer" id="a2" style="display:none;">A2. 오픈 베타 기간 중에는 결과물은 몇일 내에 이메일로 받을 수 있습니다.</div>
                 <div class="question" id="q3">Q3. 제가 원하는 화풍의 그림으로도 가능한가요?</div>
                 <div class="answer" id="a3" style="display:none;">A3. 특별히 원하는 화풍의 그림이 있다면 강아지 원본 사진과 같이 보내주셔도 됩니다.<br>
-                하지만 별도의 추가 작업이 필요하므로 소정의 금액이 청구될 수 있습니다.</div>
+                    하지만 별도의 추가 작업이 필요하므로 소정의 금액이 청구될 수 있습니다.</div>
             </div>
         </section>
         <section class="et-slide" id="tab-angular">
@@ -526,10 +750,12 @@
             <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
             <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
             <div class="wrap">
-                <h2 onclick="window.open('http://open.kakao.com/o/gcBoAOVe')" target="_black" style="font-size:3em;">카카오톡 <strong>오픈채팅</strong> 참여</h2>
-                <svg class="face" onclick="window.open('http://open.kakao.com/o/gcBoAOVe')" version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="595.28px" height="841.89px"
-                    viewBox="0 0 595.28 841.89" enable-background="new 0 0 595.28 841.89" xml:space="preserve">
+                <h2 id="kakao" onclick="window.open('http://open.kakao.com/o/gcBoAOVe')" target="_black">
+                    카카오톡 <strong>오픈채팅</strong> 참여</h2>
+                <svg class="face" onclick="window.open('http://open.kakao.com/o/gcBoAOVe')" version="1.1" id="Layer_2"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="595.28px" height="841.89px" viewBox="0 0 595.28 841.89"
+                    enable-background="new 0 0 595.28 841.89" xml:space="preserve">
 
                     <ellipse class="right-ear" fill="#F6C05C" stroke="#000000" stroke-width="7" stroke-miterlimit="10"
                         cx="300.222" cy="125.129" rx="27.307" ry="25.53" />
@@ -665,14 +891,18 @@
             }
         })
 
-        $('#q1').on("click", function(){
+        $('#q1').on("click", function () {
             $('#a1').slideToggle();
         })
-        $('#q2').on("click", function(){
+        $('#q2').on("click", function () {
             $('#a2').slideToggle();
         })
-        $('#q3').on("click", function(){
+        $('#q3').on("click", function () {
             $('#a3').slideToggle();
+        })
+
+        $('.et-hero-tab').on("click",function(){
+            $('.mobile-nav-button').click();
         })
     })
 </script>
@@ -694,9 +924,9 @@
                         $wrap = $('<div class="file-upload-wrapper">'),
                         $input = $('<input type="text" class="file-upload-input" />'),
                         // Button that will be used in non-IE browsers
-                        $button = $('<button type="button" class="file-upload-button">Select a File</button>'),
+                        $button = $('<button type="button" class="file-upload-button">사진 선택</button>'),
                         // Hack for IE
-                        $label = $('<label class="file-upload-button" for="' + $file[0].id + '">Select a File</label>');
+                        $label = $('<label class="file-upload-button" for="' + $file[0].id + '">사진 선택/label>');
 
                     // Hide by shifting to the left so we
                     // can still trigger events
@@ -807,6 +1037,22 @@
         }(jQuery));
 
     $('input[type=file]').customFile();
+</script>
+<script>
+    // 모바일 전용 네비게이션
+    $(document).ready(function () {
+        //Menu button on click event
+        $('.mobile-nav-button').on('click', function () {
+            // Toggles a class on the menu button to transform the burger menu into a cross
+            $(".mobile-nav-button .mobile-nav-button__line:nth-of-type(1)").toggleClass("mobile-nav-button__line--1");
+            $(".mobile-nav-button .mobile-nav-button__line:nth-of-type(2)").toggleClass("mobile-nav-button__line--2");
+            $(".mobile-nav-button .mobile-nav-button__line:nth-of-type(3)").toggleClass("mobile-nav-button__line--3");
+
+            // Toggles a class that slides the menu into view on the screen
+            $('.mobile-menu').toggleClass('mobile-menu--open');
+            return false;
+        });
+    });
 </script>
 
 </html>
