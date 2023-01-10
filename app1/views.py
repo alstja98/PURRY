@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import redirect
 from .models import User, Images; #db 테이블들 가져옴
 import random
+from utils.s3Manager import upload_files_to_S3
 
 
 
@@ -25,13 +26,14 @@ def openbeta(request):
 
     # input에서 받아온 유저의 이름과 email을 user 테이블에 저장
     User.objects.create(name=applicant_name, email=applicant_email)
-
     # input에서 받아온 유저의 이미지 이름들 images 테이블에 저장
     # 사실 이미지 이름을 AWS 컴퓨터 내의 경로로 재구성해야하고, 이미지들도 여러개 받을 수 있게 처리해야하는데
     # 우선 테스트로 DB에 이미지 이름만 저장하도록 함.
     user_seq = User.objects.get(name=applicant_name)
     print(user_seq)
-    Images.objects.create(seq=user_seq, path=str(applicant_imgs))
+    
+    image_path = upload_files_to_S3(applicant_imgs)
+    Images.objects.create(seq=user_seq, path=image_path)
 
     return redirect('/app1')
 
