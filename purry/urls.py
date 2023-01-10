@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+# 라우팅과 관련된 정보가 적힌 곳
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path('app1/',include('app1.urls'))
+    path("admin/", admin.site.urls), #기본 값
+    path('app1/',include('app1.urls')) #추가로 넣어줌. http://127.0.0.1/app1/로 접속하면 app1.urls.py로 연결
+    #path('read/<id>/', view.read) #id값을 받아서 view.read로 연결 즉, id값이 가변적일 경우에 사용 가능.
 ]

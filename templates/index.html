@@ -713,12 +713,14 @@
       <section class="et-slide" id="tab-es6">
         <h1 style="font-size: 1.8rem; margin-bottom: 15px">신청서 작성하기</h1>
         <div class="form-container">
+          <form action="/app1/openbeta/" method="post">
           <div class="form-input">신청자명</div>
           <input
             type="text"
             autocomplete="new-password"
             class="form-input form-input2"
             id="name"
+            name="name"
             placeholder="본인 이름"
           /><br />
           <div class="form-input">이메일 주소</div>
@@ -727,6 +729,7 @@
             autocomplete="new-password"
             class="form-input form-input2"
             id="photo"
+            name="email"
             placeholder="결과물을 받을 이메일"
           /><br /><br />
           <div class="form-input">
@@ -740,6 +743,7 @@
           </div>
           <br /><br /><br />
           <input type="submit" id="service-form" value="신청하기" />
+        </form>
         </div>
       </section>
       <section class="et-slide" id="tab-flexbox">
